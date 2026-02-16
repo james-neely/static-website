@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# James Neely — Personal Site
+
+Static resume and portfolio site built with **Next.js 16** (App Router, static export) and **MUI v7**.
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero section and navigation cards |
+| `/experience` | Work experience timeline |
+| `/education` | Education history |
+| `/skills` | Technical skills by category |
+| `/projects` | Projects and initiatives |
+| `/tools` | Browser-based web tools (AI Context Calculator) |
+| `/contact` | Contact information (hCaptcha-protected) |
+
+## Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **UI**: MUI v7 with Emotion CSS-in-JS
+- **Language**: TypeScript (strict mode)
+- **Theming**: Light/dark mode via MUI CSS Variables
+- **SEO**: JSON-LD structured data, dynamic sitemap, robots.txt, OpenGraph metadata
+- **PWA**: Service worker with offline support
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # Start dev server (localhost:3000)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev      # Development server
+npm run build    # Production build (static export to /out)
+npm run lint     # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/                  # File-based routing (one directory per page)
+├── components/
+│   ├── common/           # Shared components (PageContainer, JsonLd)
+│   ├── layout/           # Header, Footer, MobileDrawer, ThemeToggle
+│   └── sections/         # Page-specific content components
+├── data/                 # Resume data and TypeScript interfaces
+├── theme/                # MUI theme configuration
+└── utils/                # Utility functions
+```
 
-To learn more about Next.js, take a look at the following resources:
+All resume content lives in `src/data/resumeData.ts` as the single source of truth. The tools page (`/tools`) contains self-contained interactive components that don't use the resume data layer.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is configured for static export (`output: "export"` in `next.config.ts`). Run `npm run build` to generate the static files in `/out`.
