@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PageContainer from "@/components/common/PageContainer";
+import ProtectedContactInfo from "@/components/sections/ProtectedContactInfo";
+import { encode } from "@/utils/obfuscate";
 import resumeData from "@/data/resumeData";
 
 export const metadata: Metadata = {
@@ -23,23 +23,12 @@ export default function ContactPage() {
         Interested in working together or have a question? Reach out through any of the channels below.
       </Typography>
 
-      <Stack spacing={2} sx={{ maxWidth: 360 }}>
-        <Button
-          variant="outlined"
-          size="large"
-          startIcon={<EmailIcon />}
-          href={`mailto:${contact.email}`}
-        >
-          {contact.email}
-        </Button>
-        <Button
-          variant="outlined"
-          size="large"
-          startIcon={<PhoneIcon />}
-          href={`tel:${contact.phone}`}
-        >
-          {contact.phone}
-        </Button>
+      <ProtectedContactInfo
+        encodedEmail={encode(contact.email)}
+        encodedPhone={encode(contact.phone)}
+      />
+
+      <Stack spacing={2} sx={{ maxWidth: 360, mt: 2 }}>
         <Button
           variant="outlined"
           size="large"
