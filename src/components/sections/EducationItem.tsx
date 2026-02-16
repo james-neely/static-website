@@ -15,7 +15,7 @@ export default function EducationItem({ institution, credential, graduationDate,
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
           {graduationDate}
-          {honors && ` — ${honors}`}
+          {honors && ` - ${honors}`}
         </Typography>
       </CardContent>
     </Card>

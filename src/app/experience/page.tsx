@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageContainer from "@/components/common/PageContainer";
 import ExperienceItem from "@/components/sections/ExperienceItem";
+import EarlyBackground from "@/components/sections/EarlyBackground";
 import resumeData from "@/data/resumeData";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function ExperiencePage() {
       {resumeData.experience.map((entry) => (
         <ExperienceItem key={`${entry.company}-${entry.role}`} {...entry} />
       ))}
+      <EarlyBackground text={resumeData.earlyBackground} />
     </PageContainer>
   );
 }

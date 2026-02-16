@@ -15,24 +15,24 @@ const siteUrl = "https://daltonneely.com";
 export const metadata: Metadata = {
   title: {
     template: "%s | James Neely",
-    default: "James Neely — AI Solutions Architect & Full Stack Engineer",
+    default: "James Neely - AI Solutions Architect & Full Stack Engineer",
   },
   description:
-    "Personal resume site for James Neely — an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
+    "Personal resume site for James Neely - an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "James Neely — AI Solutions Architect & Full Stack Engineer",
+    title: "James Neely - AI Solutions Architect & Full Stack Engineer",
     description:
-      "Personal resume site for James Neely — an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
+      "Personal resume site for James Neely - an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
     type: "website",
     locale: "en_US",
     siteName: "James Neely",
   },
   twitter: {
     card: "summary",
-    title: "James Neely — AI Solutions Architect & Full Stack Engineer",
+    title: "James Neely - AI Solutions Architect & Full Stack Engineer",
     description:
-      "Personal resume site for James Neely — an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
+      "Personal resume site for James Neely - an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
   },
   robots: { index: true, follow: true },
   appleWebApp: {

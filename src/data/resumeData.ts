@@ -69,6 +69,9 @@ const resumeData: ResumeData = {
     },
   ],
 
+  earlyBackground:
+    "Started coding at 13 after discovering programming books at the local library. What began as curiosity quickly became an obsession, every spare moment went into writing code, breaking things, and figuring out how to build them better. By high school, nights and weekends were spent building project after project: personal websites, browser-based games, chat applications, and eventually fully functional social media platforms complete with user authentication, real-time messaging, and content feeds. Each project pushed into unfamiliar territory, databases, server administration, networking, security, and each one shipped. By the time college came around, years of hands-on building had already laid a strong engineering foundation. A Computer Science degree wasn't about learning how to code, it was about understanding the deeper theory: data structures, computational complexity, and the algorithms behind machine learning and artificial intelligence that couldn't be picked up from library books alone.",
+
   education: [
     {
       institution: "Colorado Mesa University",

@@ -11,7 +11,7 @@ import resumeData from "@/data/resumeData";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with James Neely — email, phone, and location.",
+  description: "Get in touch with James Neely - email, phone, and location.",
 };
 
 export default function ContactPage() {

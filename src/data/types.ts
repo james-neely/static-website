@@ -40,6 +40,7 @@ export interface ContactData {
 export interface ResumeData {
   hero: HeroData;
   experience: ExperienceEntry[];
+  earlyBackground: string;
   education: EducationEntry[];
   skills: SkillGroup[];
   projects: ProjectEntry[];
