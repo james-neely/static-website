@@ -10,6 +10,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import CodeIcon from "@mui/icons-material/Code";
 import BuildIcon from "@mui/icons-material/Build";
+import HandymanIcon from "@mui/icons-material/Handyman";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
 
@@ -18,6 +19,7 @@ const overviewCards = [
   { label: "Education", href: "/education", icon: <SchoolIcon fontSize="large" color="secondary" /> },
   { label: "Skills", href: "/skills", icon: <CodeIcon fontSize="large" color="secondary" /> },
   { label: "Projects", href: "/projects", icon: <BuildIcon fontSize="large" color="secondary" /> },
+  { label: "Tools", href: "/tools", icon: <HandymanIcon fontSize="large" color="secondary" /> },
   { label: "Contact", href: "/contact", icon: <EmailIcon fontSize="large" color="secondary" /> },
 ];
 

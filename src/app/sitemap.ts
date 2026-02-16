@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/education`, lastModified, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteUrl}/skills`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/projects`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/tools`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.6 },
   ];
 }

@@ -67,26 +67,36 @@ export default function ProtectedContactInfo({ encodedEmail, encodedPhone }: Pro
 
     return (
       <Stack spacing={2} sx={{ maxWidth: 360 }}>
-        <Button
-          variant="outlined"
-          size="large"
-          startIcon={<EmailIcon />}
-          href={`mailto:${email}`}
-        >
-          {email}
-        </Button>
-        <Button
-          variant="outlined"
-          size="large"
-          startIcon={<PhoneIcon />}
-          href={`tel:${phone}`}
-        >
-          {phone}
-        </Button>
-        <Typography variant="caption" color="text.secondary" sx={{ mt: 1 }}>
-          This is a unique hidden email address. If it appears in marketing lists,
-          I&apos;ll know exactly where it was leaked from.
-        </Typography>
+        <Box>
+          <Button
+            variant="outlined"
+            size="large"
+            startIcon={<EmailIcon />}
+            href={`mailto:${email}`}
+            fullWidth
+          >
+            {email}
+          </Button>
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: "block" }}>
+            This is a unique hidden email address. If it appears in marketing lists,
+            I&apos;ll know exactly where it was leaked from.
+          </Typography>
+        </Box>
+        <Box>
+          <Button
+            variant="outlined"
+            size="large"
+            startIcon={<PhoneIcon />}
+            href={`tel:${phone}`}
+            fullWidth
+          >
+            {phone}
+          </Button>
+          <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: "block" }}>
+            If I don&apos;t answer, please leave a message and I&apos;ll get back
+            to you as soon as I can.
+          </Typography>
+        </Box>
       </Stack>
     );
   }
