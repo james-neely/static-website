@@ -1,5 +1,10 @@
+"use client";
+
 import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import AdUnit from "@/components/common/AdUnit";
+import { adsenseConfig } from "@/config/adsense";
 
 export default function Footer() {
   return (
@@ -13,6 +18,12 @@ export default function Footer() {
         mt: "auto",
       }}
     >
+      {adsenseConfig.enabled && (
+        <>
+          <AdUnit slotId={adsenseConfig.adSlotId} />
+          <Divider sx={{ my: 2 }} />
+        </>
+      )}
       <Typography variant="body2" color="text.secondary">
         &copy; {new Date().getFullYear()} James Neely. All rights reserved.
       </Typography>

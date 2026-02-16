@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 const CACHE_NAME = `james-neely-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -35,8 +35,19 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+const AD_NETWORK_DOMAINS = [
+  "googlesyndication.com",
+  "googleadservices.com",
+  "doubleclick.net",
+];
+
 self.addEventListener("fetch", (event) => {
   const { request } = event;
+  const url = new URL(request.url);
+
+  if (AD_NETWORK_DOMAINS.some((domain) => url.hostname.endsWith(domain))) {
+    return;
+  }
 
   if (request.mode === "navigate") {
     event.respondWith(

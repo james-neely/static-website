@@ -8,6 +8,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/common/JsonLd";
 import RegisterSW from "@/components/common/RegisterSW";
+import AdSenseScript from "@/components/common/AdSenseScript";
 import "./globals.css";
 
 const siteUrl = "https://daltonneely.com";
@@ -57,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4595833100903931" />
         <JsonLd />
       </head>
       <body>
@@ -71,6 +73,7 @@ export default function RootLayout({
           </ThemeProvider>
         </AppRouterCacheProvider>
         <RegisterSW />
+        <AdSenseScript />
       </body>
     </html>
   );
