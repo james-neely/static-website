@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import PageContainer from "@/components/common/PageContainer";
 import resumeData from "@/data/resumeData";
 
@@ -38,6 +39,16 @@ export default function ContactPage() {
           href={`tel:${contact.phone}`}
         >
           {contact.phone}
+        </Button>
+        <Button
+          variant="outlined"
+          size="large"
+          startIcon={<GitHubIcon />}
+          href={contact.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
         </Button>
         <Button
           variant="outlined"

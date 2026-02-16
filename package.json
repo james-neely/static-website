@@ -2,8 +2,13 @@
   "name": "static-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
+    "generate-icons": "tsx scripts/generate-pwa-icons.mts",
+    "prebuild": "npm run generate-icons",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -25,6 +30,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "sharp": "^0.33.0",
+    "tsx": "^4.0.0",
     "typescript": "^5"
   }
 }

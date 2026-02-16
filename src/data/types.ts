@@ -34,6 +34,7 @@ export interface ContactData {
   location: string;
   phone: string;
   email: string;
+  github: string;
 }
 
 export interface ResumeData {

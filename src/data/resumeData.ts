@@ -140,6 +140,7 @@ const resumeData: ResumeData = {
     location: "Hawaii",
     phone: "+1-970-208-2235",
     email: "farmer-wow2o@icloud.com",
+    github: "https://github.com/james-neely",
   },
 };
 

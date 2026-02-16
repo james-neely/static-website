@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,6 +7,7 @@ import theme from "@/theme/theme";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/common/JsonLd";
+import RegisterSW from "@/components/common/RegisterSW";
 import "./globals.css";
 
 const siteUrl = "https://daltonneely.com";
@@ -34,6 +35,18 @@ export const metadata: Metadata = {
       "Personal resume site for James Neely — an AI solutions architect and full stack engineer specializing in AI interaction design, iOS/IoT development, DevSecOps, and information security.",
   },
   robots: { index: true, follow: true },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "James Neely",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#b8860b" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1c1e" },
+  ],
 };
 
 export default function RootLayout({
@@ -57,6 +70,7 @@ export default function RootLayout({
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
+        <RegisterSW />
       </body>
     </html>
   );

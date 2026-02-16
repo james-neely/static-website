@@ -7,21 +7,21 @@ const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
-        primary: { main: "#1a365d" },
-        secondary: { main: "#2c7a7b" },
+        primary: { main: "#b8860b" },
+        secondary: { main: "#8b6914" },
         background: {
-          default: "#f7f8fa",
+          default: "#faf9f6",
           paper: "#ffffff",
         },
       },
     },
     dark: {
       palette: {
-        primary: { main: "#63b3ed" },
-        secondary: { main: "#4fd1c5" },
+        primary: { main: "#e6b422" },
+        secondary: { main: "#f0c75e" },
         background: {
-          default: "#1a202c",
-          paper: "#2d3748",
+          default: "#1c1c1e",
+          paper: "#2c2c2e",
         },
       },
     },
