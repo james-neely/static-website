@@ -19,6 +19,7 @@ const navItems = [
   { label: "Skills", href: "/skills" },
   { label: "Projects", href: "/projects" },
   { label: "Tools", href: "/tools" },
+  { label: "Useable Security", href: "/useable-security" },
   { label: "Contact", href: "/contact" },
 ];
 
