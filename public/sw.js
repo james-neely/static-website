@@ -39,6 +39,7 @@ const AD_NETWORK_DOMAINS = [
   "googlesyndication.com",
   "googleadservices.com",
   "doubleclick.net",
+  "fundingchoicesmessages.google.com",
 ];
 
 self.addEventListener("fetch", (event) => {

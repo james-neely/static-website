@@ -8,6 +8,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/common/JsonLd";
 import RegisterSW from "@/components/common/RegisterSW";
+import ConsentScript from "@/components/common/ConsentScript";
 import AdSenseScript from "@/components/common/AdSenseScript";
 import "./globals.css";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           </ThemeProvider>
         </AppRouterCacheProvider>
         <RegisterSW />
+        <ConsentScript />
         <AdSenseScript />
       </body>
     </html>
