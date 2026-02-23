@@ -9,6 +9,9 @@ const resumeData: ResumeData = {
       "Accomplished Lead Software Architect with 15+ years in designing scalable systems for enterprise environments, leading cross-functional teams to deliver projects that increased operational efficiency by 40%. Expertise in cloud architecture and AI integration, driving revenue growth through innovative solutions while mentoring engineers toward high-performance outcomes.",
   },
 
+  professionalSummary:
+    "I architect systems end-to-end, mentor engineers, and build security that enables work. If it doesn't serve the people using it, it doesn't ship.",
+
   experience: [
     {
       role: "Lead Software Architect",

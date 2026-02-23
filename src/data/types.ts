@@ -39,6 +39,7 @@ export interface ContactData {
 
 export interface ResumeData {
   hero: HeroData;
+  professionalSummary: string;
   experience: ExperienceEntry[];
   earlyBackground: string;
   education: EducationEntry[];
