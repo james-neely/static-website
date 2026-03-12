@@ -83,7 +83,7 @@ const COMMON_PORTS = [
   { port: 27017, protocol: "TCP", usage: "MongoDB" },
 ] as const;
 
-const COMMON_PORT_SET = new Set(COMMON_PORTS.map((entry) => entry.port));
+const COMMON_PORT_SET: ReadonlySet<number> = new Set(COMMON_PORTS.map((entry) => entry.port));
 
 type PortProfile = keyof typeof PORT_PROFILES;
 type GenerationMode = "random" | "sequential";

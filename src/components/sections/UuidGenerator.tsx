@@ -62,7 +62,15 @@ const UUID_REFERENCE = [
   },
 ] as const;
 
-const UUID_EPOCH_OFFSET = 0x01b21dd213814000n;
+const UUID_EPOCH_OFFSET = BigInt("0x01b21dd213814000");
+const BIGINT_MASK_32 = BigInt("0xffffffff");
+const BIGINT_MASK_16 = BigInt("0xffff");
+const BIGINT_MASK_12 = BigInt("0x0fff");
+const BIGINT_SHIFT_12 = BigInt(12);
+const BIGINT_SHIFT_28 = BigInt(28);
+const BIGINT_SHIFT_32 = BigInt(32);
+const BIGINT_SHIFT_48 = BigInt(48);
+const BIGINT_TICKS_PER_MILLISECOND = BigInt(10000);
 
 type UuidVersion = (typeof UUID_VERSIONS)[number]["value"];
 
@@ -251,9 +259,9 @@ function generateUuid(version: UuidVersion): string {
 function generateUuidV1(): string {
   const bytes = new Uint8Array(16);
   const timestamp = createGregorianTimestamp();
-  const timeLow = Number(timestamp & 0xffffffffn);
-  const timeMid = Number((timestamp >> 32n) & 0xffffn);
-  const timeHigh = Number((timestamp >> 48n) & 0x0fffn);
+  const timeLow = Number(timestamp & BIGINT_MASK_32);
+  const timeMid = Number((timestamp >> BIGINT_SHIFT_32) & BIGINT_MASK_16);
+  const timeHigh = Number((timestamp >> BIGINT_SHIFT_48) & BIGINT_MASK_12);
   const clockSequence = random14BitNumber();
   const node = randomBytes(6);
 
@@ -284,9 +292,9 @@ function generateUuidV4(): string {
 function generateUuidV6(): string {
   const bytes = new Uint8Array(16);
   const timestamp = createGregorianTimestamp();
-  const reorderedHigh = Number((timestamp >> 28n) & 0xffffffffn);
-  const reorderedMid = Number((timestamp >> 12n) & 0xffffn);
-  const reorderedLow = Number(timestamp & 0x0fffn);
+  const reorderedHigh = Number((timestamp >> BIGINT_SHIFT_28) & BIGINT_MASK_32);
+  const reorderedMid = Number((timestamp >> BIGINT_SHIFT_12) & BIGINT_MASK_16);
+  const reorderedLow = Number(timestamp & BIGINT_MASK_12);
   const clockSequence = random14BitNumber();
   const node = randomBytes(6);
 
@@ -326,7 +334,7 @@ function generateUuidV7(): string {
 function createGregorianTimestamp(): bigint {
   const unixMilliseconds = BigInt(Date.now());
   const subMillisecondTicks = BigInt(randomInt(0, 9_999));
-  return unixMilliseconds * 10_000n + UUID_EPOCH_OFFSET + subMillisecondTicks;
+  return unixMilliseconds * BIGINT_TICKS_PER_MILLISECOND + UUID_EPOCH_OFFSET + subMillisecondTicks;
 }
 
 function random14BitNumber(): number {
