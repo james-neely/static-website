@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import ToptalBadge from "./ToptalBadge";
 
 interface HeroSectionProps {
   name: string;
@@ -28,6 +29,9 @@ export default function HeroSection({ name, title, summary }: HeroSectionProps) 
         <Typography variant="body1" component="p" sx={{ opacity: 0.85, maxWidth: 700, mx: "auto", mt: 2 }}>
           {summary}
         </Typography>
+        <Box sx={{ mt: 5, display: "flex", justifyContent: "center" }}>
+          <ToptalBadge />
+        </Box>
       </Container>
     </Box>
   );
